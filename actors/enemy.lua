@@ -22,6 +22,11 @@ function enemy:init(x,y)
 	
 	-- character variables
 	self.movespeed = 5
+	self.rotatespeed = 15 --how many degrees we will rotate in a single second
+end
+
+function enemy:update(dt)
+	self.r = self.r + math.rad( self.rotatespeed * dt )
 end
 
 function enemy:draw()
