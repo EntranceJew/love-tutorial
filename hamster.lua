@@ -10,6 +10,9 @@ function hamster:init(x,y)
 	self.width = self.image:getWidth()
 	self.height = self.image:getHeight()
 	
+	-- audio
+	self.sound = love.audio.newSource("sound/ding.wav")
+	
 	-- graphics / location
 	self.r = math.rad(90)
 	self.sx = 1
@@ -32,6 +35,11 @@ function hamster:keypressed(key, scancode, isrepeat)
 		self.x = self.x - self.movespeed
 	elseif key == "d" then 
 		self.x = self.x + self.movespeed
+	end
+	
+	if key == "space" then
+		self.sound:play()
+		self.r = self.r - math.rad(10)
 	end
 end
 
