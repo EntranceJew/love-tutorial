@@ -1,15 +1,8 @@
 function love.load()
-	hamster = love.graphics.newImage("image/hamster.png")
-	width = hamster:getWidth()
-	height = hamster:getHeight()
+	hamster = require("hamster")
+	hamster:init(100,100)
 end
 
 function love.draw()
-	love.graphics.draw(
-		hamster,
-		100, 100,
-		math.rad(90),
-		1, 1,
-		width / 2, height / 2
-	)
+	hamster:draw()
 end
