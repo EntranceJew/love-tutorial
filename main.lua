@@ -1,10 +1,14 @@
 function love.load()
-	hamster = require("hamster")
+	hamster = require("actors.hamster")
 	hamster:init(100,100)
+	
+	enemy = require("actors.enemy")
+	enemy:init(300, 300)
 end
 
 function love.draw()
 	hamster:draw()
+	enemy:draw()
 end
 
 function love.keypressed(key, scancode, isrepeat)
